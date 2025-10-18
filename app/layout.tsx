@@ -77,17 +77,21 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ConvexClientProvider>
-          <FeatureFlagsProvider value={getFeatureFlags()}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              disableTransitionOnChange
-              enableSystem
-            >
-              <Toaster position="top-center" />
-              <SessionProvider>{children}</SessionProvider>
-            </ThemeProvider>
-          </FeatureFlagsProvider>
+          <SessionProvider>
+            <TeacherModeProvider>
+              <FeatureFlagsProvider value={getFeatureFlags()}>
+                <ThemeProvider
+                  attribute="class"
+                  defaultTheme="system"
+                  disableTransitionOnChange
+                  enableSystem
+                >
+                  <Toaster position="top-center" />
+                  {children}
+                </ThemeProvider>
+              </FeatureFlagsProvider>
+            </TeacherModeProvider>
+          </SessionProvider>
         </ConvexClientProvider>
       </body>
     </html>

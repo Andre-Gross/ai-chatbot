@@ -23,6 +23,7 @@ import { SelectItem } from "@/components/ui/select";
 import { useFeatureFlags } from "@/hooks/use-feature-flags";
 import { chatModels } from "@/lib/ai/models";
 import { myProvider } from "@/lib/ai/providers";
+import { TeacherModeToggle } from "./teacher-mode-toggle";
 import {
   ALLOWED_UPLOAD_MIME_TYPES,
   MAX_UPLOAD_SIZE_BYTES,
@@ -362,6 +363,7 @@ function PureMultimodalInput({
               onModelChange={onModelChange}
               selectedModelId={selectedModelId}
             />
+            <TeacherModeToggle />
           </PromptInputTools>
 
           {status === "submitted" ? (
