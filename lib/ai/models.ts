@@ -18,4 +18,9 @@ export const chatModels: ChatModel[] = [
     description:
       "Uses advanced chain-of-thought reasoning for complex problems",
   },
+  {
+    id: "teacher-mode",
+    name: "Lehrermodus 🧑‍🏫",
+    description: "Antwortet wie ein Lehrer (ELI5-Stil)",
+  },
 ];
