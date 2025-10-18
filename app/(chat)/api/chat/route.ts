@@ -222,13 +222,11 @@ export async function POST(request: Request) {
                   "createDocument",
                   "updateDocument",
                   "requestSuggestions",
-                  "teacherMode",
                 ] as (
                   | "getWeather"
                   | "createDocument"
                   | "updateDocument"
                   | "requestSuggestions"
-                  | "teacherMode"
                 )[]),
           experimental_transform: smoothStream({ chunking: "word" }),
           tools: {

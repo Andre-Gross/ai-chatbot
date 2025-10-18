@@ -1,21 +1,20 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { useState } from "react";
-import { teacherPrompt } from "@/lib/ai/prompts";
+import { useTeacherMode } from "./teacher-mode-provider";
 
 export function TeacherModeToggle() {
-  const [isActive, setIsActive] = useState(false);
+  const { isTeacherModeActive, toggleTeacherMode } = useTeacherMode();
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setIsActive(!isActive)}
+      onClick={toggleTeacherMode}
       className={`size-8 rounded-full transition-colors duration-200 ${
-        isActive ? "bg-primary text-primary-foreground" : ""
+        isTeacherModeActive ? "bg-primary text-primary-foreground" : ""
       }`}
-      title={isActive ? "Teacher Mode Active" : "Teacher Mode Inactive"}
+      title={isTeacherModeActive ? "Teacher Mode Active" : "Teacher Mode Inactive"}
     >
       🧑‍🏫
     </Button>
